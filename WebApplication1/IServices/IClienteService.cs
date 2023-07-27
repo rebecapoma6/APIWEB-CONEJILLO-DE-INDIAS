@@ -4,6 +4,8 @@ namespace WebApplication1.IServices
 {
     public interface IClienteService
     {
-        int insertCliente(ClientesItem clientesItem);
+        int InsertCliente(ClientesItem clientesItem);
+
+        void deleteCliente(int clienteId);
     }
 }

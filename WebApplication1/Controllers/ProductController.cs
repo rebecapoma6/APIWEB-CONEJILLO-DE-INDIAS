@@ -21,6 +21,9 @@ namespace WebApplication1.Controllers
         {
             return _productService.insertProduct(productItem);
         }
+
+    }  
+    
     }
 
-}
+

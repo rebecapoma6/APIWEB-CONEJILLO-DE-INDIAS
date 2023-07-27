@@ -12,16 +12,16 @@ namespace WebApplication1.Services
             {
             }
 
-            public int InsertDetalle(Detalles_Pedido detalle)
+            public int insertDetalle(Detalles_Pedido detalles_pedido)
             {
-                _serviceContext.Detalles.Add(detalle);
+                _serviceContext.Detalles.Add(detalles_pedido);
                 _serviceContext.SaveChanges();
-                return detalle.IdPedido;
+                return detalles_pedido.IdPedido;
             }
 
-            public void UpdateDetalle(Detalles_Pedido detalle)
+            public void UpdateDetalle(Detalles_Pedido detalles)
             {
-                _serviceContext.Detalles.Update(detalle);
+                _serviceContext.Detalles.Update(detalles);
                 _serviceContext.SaveChanges();
             }
 
@@ -35,12 +35,8 @@ namespace WebApplication1.Services
                 }
             }
 
-        int IDetalleService.insertDetalle(Detalles_Pedido detalles_pedido)
-        {
-            throw new NotImplementedException();
-        }
     }
 
 
-    }
+  }
 
