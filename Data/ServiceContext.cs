@@ -18,7 +18,7 @@ namespace Data
         public DbSet<ClientesItem> Clientes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
-        {            
+        {
             builder.Entity<ProductItem>(entity =>
             {
                 entity.ToTable("Products");
