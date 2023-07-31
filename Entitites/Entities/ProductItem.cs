@@ -17,6 +17,8 @@ namespace Entitites.Entities
 
         public string MarcaProduct { get; set; }
 
+        public int Precio { get; set; }
+
 
     }
 }
