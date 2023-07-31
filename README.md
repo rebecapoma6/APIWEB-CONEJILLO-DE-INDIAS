@@ -18,9 +18,9 @@ En este repositorio, encontrarás una completa y organizada base de datos diseñ
 
 <h1 align= center> CRÉDITOS: </h1>
 
-<ol>
-<ul>Rebeca Poma.</ul>
-<ul>Raúl Muñóz.</ul>
-<ul>Angel Serrano.</ul>
-<ul>Javier Serrano.</ul>
-</ol>
+<ul>
+<li>Rebeca Poma.</li>
+<li>Raúl Muñóz.</li>
+<li>Angel Serrano.</li>
+<li>Javier Serrano.</li>
+</ul>
