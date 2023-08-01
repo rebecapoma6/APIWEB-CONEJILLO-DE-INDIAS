@@ -1,4 +1,5 @@
 using Data;
+using Entitites.Entities;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.IServices;
 using WebApplication1.Services;
@@ -13,6 +14,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IProductService, ProductService>();
+builder.Services.AddScoped<IClienteService, ClienteService>();
+builder.Services.AddScoped<IDetalleService, DetalleService>();
+
 
 builder.Services.AddDbContext<ServiceContext>(
         options => options.UseSqlServer("name=ConnectionStrings:ServiceContext"));

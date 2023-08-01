@@ -6,6 +6,9 @@ namespace WebApplication1.IServices
     {
         int InsertCliente(ClientesItem clientesItem);
 
-        void deleteCliente(int clienteId);
+        void UpdateCliente(ClientesItem clienteModificado);
+        void DeleteCliente(int ClienteId);
+        int DeleteCliente(ClientesItem clienteBorrado);
     }
 }
+

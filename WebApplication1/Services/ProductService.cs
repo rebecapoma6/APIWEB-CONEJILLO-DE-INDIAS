@@ -11,6 +11,11 @@ namespace WebApplication1.Services
         {
         }
 
+        public void DeleteDetalle(int ProductsId)
+        {
+            throw new NotImplementedException();
+        }
+
         public int insertProduct(ProductItem productItem)
         {
             _serviceContext.Products.Add(productItem);
@@ -18,8 +23,9 @@ namespace WebApplication1.Services
             return productItem.Id;
         }
 
-
-
-    
+        public void UpdateProduct(ProductItem Products)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

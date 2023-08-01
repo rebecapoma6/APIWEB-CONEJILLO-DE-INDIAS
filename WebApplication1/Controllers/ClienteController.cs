@@ -11,10 +11,10 @@ namespace WebApplication1.Controllers
     [Route("[controller]/[action]")]
     public class ClienteController : ControllerBase
     {
-        private readonly ClienteService _clienteService;
+        private readonly IClienteService _clienteService;
         private readonly ServiceContext _serviceContext;
 
-        public ClienteController(ClienteService clienteService, ServiceContext serviceContext)
+        public ClienteController(IClienteService clienteService, ServiceContext serviceContext)
         {
             _clienteService = clienteService;
             _serviceContext = serviceContext;
@@ -25,6 +25,21 @@ namespace WebApplication1.Controllers
         {
             return _clienteService.InsertCliente(cliente);
         }
+
+        [HttpPatch(Name = "ClienteModificado")]
+        public int Patch([FromBody] ClientesItem clienteModificado)
+        {
+            return _clienteService.InsertCliente(clienteModificado);
+        }
+        [HttpPatch(Name = "ClienteBorrado")]
+        public int Patch([FromBody] ClientesItem clienteBorrado)
+        {
+            return _clienteService.DeleteCliente(clienteBorrado);
+        }
+
+
+
+
     }
 }
 
