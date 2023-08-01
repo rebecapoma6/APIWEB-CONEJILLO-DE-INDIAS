@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.Migrations
 {
     [DbContext(typeof(ServiceContext))]
-    [Migration("20230726121010_newTabla")]
-    partial class newTabla
+    [Migration("20230801110732_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -71,6 +71,9 @@ namespace Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("Precio")
+                        .HasColumnType("int");
+
                     b.HasKey("IdPedido");
 
                     b.HasIndex("IdCliente");
@@ -80,26 +83,73 @@ namespace Data.Migrations
 
             modelBuilder.Entity("Entitites.Entities.ProductItem", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("IdProducto")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProducto"));
 
-                    b.Property<string>("MarcaProduct")
+                    b.Property<string>("MarcaProducto")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ProductName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
 
-                    b.Property<string>("productName")
+                    b.HasKey("IdProducto");
+
+                    b.ToTable("Products", (string)null);
+                });
+
+            modelBuilder.Entity("Entitites.Entities.RollItem", b =>
+                {
+                    b.Property<int>("IdRoll")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdRoll"));
+
+                    b.Property<string>("RollName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("Id");
+                    b.HasKey("IdRoll");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("RollUser", (string)null);
+                });
+
+            modelBuilder.Entity("Entitites.Entities.UserItem", b =>
+                {
+                    b.Property<int>("IdUsuario")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdUsuario"));
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("IdRoll")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("User_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("IdUsuario");
+
+                    b.HasIndex("IdRoll");
+
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("Entitites.Entities.Detalles_Pedido", b =>
@@ -107,7 +157,16 @@ namespace Data.Migrations
                     b.HasOne("Entitites.Entities.ClientesItem", null)
                         .WithMany()
                         .HasForeignKey("IdCliente")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Entitites.Entities.UserItem", b =>
+                {
+                    b.HasOne("Entitites.Entities.RollItem", null)
+                        .WithMany()
+                        .HasForeignKey("IdRoll")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

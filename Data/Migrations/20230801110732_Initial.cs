@@ -5,7 +5,7 @@
 namespace Data.Migrations
 {
     /// <inheritdoc />
-    public partial class newTabla : Migration
+    public partial class Initial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -29,15 +29,28 @@ namespace Data.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    IdProducto = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    productName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Stock = table.Column<int>(type: "int", nullable: false),
-                    MarcaProduct = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    MarcaProducto = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.PrimaryKey("PK_Products", x => x.IdProducto);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "RollUser",
+                columns: table => new
+                {
+                    IdRoll = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    RollName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RollUser", x => x.IdRoll);
                 });
 
             migrationBuilder.CreateTable(
@@ -46,10 +59,11 @@ namespace Data.Migrations
                 {
                     IdPedido = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Pedido = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     IdCliente = table.Column<int>(type: "int", nullable: false),
+                    Pedido = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Fecha_Pedido = table.Column<int>(type: "int", nullable: false),
-                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    Estado = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Precio = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -59,13 +73,40 @@ namespace Data.Migrations
                         column: x => x.IdCliente,
                         principalTable: "Clientes",
                         principalColumn: "ClienteId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    IdUsuario = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    User_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    IdRoll = table.Column<int>(type: "int", nullable: false),
+                    Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.IdUsuario);
+                    table.ForeignKey(
+                        name: "FK_Users_RollUser_IdRoll",
+                        column: x => x.IdRoll,
+                        principalTable: "RollUser",
+                        principalColumn: "IdRoll",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Detalles_IdCliente",
                 table: "Detalles",
                 column: "IdCliente");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_IdRoll",
+                table: "Users",
+                column: "IdRoll");
         }
 
         /// <inheritdoc />
@@ -78,7 +119,13 @@ namespace Data.Migrations
                 name: "Products");
 
             migrationBuilder.DropTable(
+                name: "Users");
+
+            migrationBuilder.DropTable(
                 name: "Clientes");
+
+            migrationBuilder.DropTable(
+                name: "RollUser");
         }
     }
 }
