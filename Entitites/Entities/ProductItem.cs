@@ -7,16 +7,11 @@ using System.Threading.Tasks;
 namespace Entitites.Entities
 {
     public class ProductItem
-    {
-        public int Id { get; set; }
-
+    {     
+        public int IdProducto { get; set; } // Clave primaria para la entidad ProductItem
         public string ProductName { get; set; }
-
-
         public int Stock { get; set; }
-
-        public string MarcaProduct { get; set; }
-
+        public string MarcaProducto { get; set; }
 
     }
 }

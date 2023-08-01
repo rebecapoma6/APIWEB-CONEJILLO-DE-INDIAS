@@ -10,10 +10,14 @@ namespace Entitites.Entities
     public class Detalles_Pedido
     {
             public int IdPedido { get; set; }
-            public string Pedido { get; set; }
-           
-            public int IdCliente { get; set;}
+
+            public int IdCliente { get; set; }
+            public string Pedido { get; set; }         
+            
             public int Fecha_Pedido { get; set;}            
             public string Estado {get; set;}
+            public int Precio { get; set; }
+
+
     }
 }
