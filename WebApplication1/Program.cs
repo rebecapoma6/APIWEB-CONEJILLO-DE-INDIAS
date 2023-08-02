@@ -1,4 +1,5 @@
 using Data;
+using Entitites.Entities;
 using Microsoft.EntityFrameworkCore;
 using WebApplication1.IServices;
 using WebApplication1.Services;
@@ -16,6 +17,7 @@ builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped<IDetalleService, DetalleService>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
+
 
 
 builder.Services.AddDbContext<ServiceContext>(

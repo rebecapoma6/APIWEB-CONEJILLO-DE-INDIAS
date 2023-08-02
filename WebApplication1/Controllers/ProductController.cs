@@ -32,7 +32,7 @@ namespace WebApplication1.Controllers
 
             if (seletedUser != null)
             {
-                return _productService.insertProduct(productItem);
+                return _productService.InsertProduct(productItem);
 
             }
             else

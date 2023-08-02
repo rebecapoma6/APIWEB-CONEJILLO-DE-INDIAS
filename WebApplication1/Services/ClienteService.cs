@@ -1,5 +1,8 @@
-﻿using Data;
+﻿
+using Data;
 using Entitites.Entities;
+using System;
+using System.Collections.Generic;
 using WebApplication1.IServices;
 
 namespace WebApplication1.Services
@@ -33,5 +36,14 @@ namespace WebApplication1.Services
             }
         }
     }
-
 }
+
+
+
+
+
+
+
+      
+
+
