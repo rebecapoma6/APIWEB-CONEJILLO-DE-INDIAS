@@ -1,5 +1,8 @@
-﻿using Data;
+﻿
+using Data;
 using Entitites.Entities;
+using System;
+using System.Collections.Generic;
 using WebApplication1.IServices;
 
 namespace WebApplication1.Services
@@ -10,14 +13,37 @@ namespace WebApplication1.Services
         {
         }
 
-        public void deleteCliente(int clienteId)
+        public int InsertCliente(ClientesItem cliente)
         {
-            throw new NotImplementedException();
+            _serviceContext.Clientes.Add(cliente);
+            _serviceContext.SaveChanges();
+            return cliente.ClienteId;
         }
 
-        public int InsertCliente(ClientesItem clientesItem)
+        public void UpdateCliente(ClientesItem cliente)
         {
-            throw new NotImplementedException();
+            _serviceContext.Clientes.Update(cliente);
+            _serviceContext.SaveChanges();
+        }
+
+        public void DeleteCliente(int clienteId)
+        {
+            var cliente = _serviceContext.Clientes.Find(clienteId);
+            if (cliente != null)
+            {
+                _serviceContext.Clientes.Remove(cliente);
+                _serviceContext.SaveChanges();
+            }
         }
     }
 }
+
+
+
+
+
+
+
+      
+
+
