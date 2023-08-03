@@ -10,7 +10,19 @@ En este repositorio, encontrarás una completa y organizada base de datos diseñ
 
 
 
+<h1 align= center> Stack: </h1>
 
+● Visual Studio Community 2022.
+
+● C#
+
+● SQL
+
+● .NET Core v6.0 y Entity Framework v7.0.
+
+● SQL Server Studio Management
+
+● GIT
 
 
 
