@@ -13,34 +13,41 @@ namespace WebApplication1.Services
         {
         }
 
-        public void DeleteCliente(int ClienteId)
-        {
-            throw new NotImplementedException();
-        }
-
-        public int DeleteCliente(ClientesItem clienteBorrado)
-        {
-            throw new NotImplementedException();
-        }
-
         public int InsertCliente(ClientesItem cliente)
         {
-            // Agregar el cliente al contexto de base de datos
             _serviceContext.Clientes.Add(cliente);
-
-            // Guardar los cambios en la base de datos
             _serviceContext.SaveChanges();
-
-            // Devolver el ClienteId asignado al cliente
             return cliente.ClienteId;
         }
 
-        void IClienteService.UpdateCliente(ClientesItem clienteModificado)
+        public void UpdateCliente(ClientesItem cliente)
         {
-            throw new NotImplementedException();
+            _serviceContext.Clientes.Update(cliente);
+            _serviceContext.SaveChanges();
+        }
+
+        public void DeleteCliente(int clienteId)
+        {
+            var cliente = _serviceContext.Clientes.Find(clienteId);
+            if (cliente != null)
+            {
+                _serviceContext.Clientes.Remove(cliente);
+                _serviceContext.SaveChanges();
+            }
+        }
+
+        public IEnumerable<ClientesItem> GetAllClientes()
+        {
+            return _serviceContext.Clientes.ToList();
         }
     }
 }
+
+
+
+
+
+
 
       
 
