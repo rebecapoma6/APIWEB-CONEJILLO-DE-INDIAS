@@ -35,6 +35,11 @@ namespace WebApplication1.Services
                 _serviceContext.SaveChanges();
             }
         }
+
+        public IEnumerable<ClientesItem> GetAllClientes()
+        {
+            return _serviceContext.Clientes.ToList();
+        }
     }
 }
 

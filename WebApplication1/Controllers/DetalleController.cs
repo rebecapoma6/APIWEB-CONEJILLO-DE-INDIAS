@@ -83,5 +83,18 @@ public class DetalleController : ControllerBase
     }
 
 
+    [HttpGet("{detalleId}", Name = "GetDetalle")]
+    public IActionResult GetDetalle(int detalleId)
+    {
+        var detalle = _serviceContext.Detalles.FirstOrDefault(d => d.IdPedido == detalleId);
+        if (detalle == null)
+        {
+            return NotFound();
+        }
+
+        return Ok(detalle);
+    }
+
+
 }
 

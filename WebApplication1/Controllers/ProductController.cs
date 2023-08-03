@@ -19,6 +19,8 @@ namespace WebApplication1.Controllers
             _productService = productService;
             _serviceContext = serviceContext;
         }
+
+
         [HttpPost(Name = "InsertProduct")]
        
         public int Post([FromQuery] string userUser_Name, [FromQuery] string userPassword, [FromBody] ProductItem productItem)
@@ -39,14 +41,22 @@ namespace WebApplication1.Controllers
             {
                 throw new InvalidCredentialException("El producto no Existe");
             }
-
-
         }
 
 
+        [HttpGet("{productoId}", Name = "GetProducto")]
+        public IActionResult GetProducto(int productoId)
+        {
+            var producto = _serviceContext.Products.FirstOrDefault(p => p.IdProducto == productoId);
+            if (producto == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(producto);
+        }
 
     }
-
 
 }
 
