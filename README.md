@@ -41,15 +41,13 @@ Para instalar el proyecto, debe clonar el repositorio con el siguiente enlace: h
 <h1 align= center> CRÉDITOS: </h1>
 
 <ul>
-<<<<<<< HEAD
-<li>Rebeca Poma.</li>
-<li>Raúl Muñóz.</li>   
-<li>Angel Serrano.</li>
-<li>Javier Serrano.</li>
-=======
-<li>Rebeca Poma. <img src="" ></li>
-<li>Raúl Muñóz. <img src="" > </li> 
-<li>Angel Serrano. <img src="" > </li>
-<li>Javier Serrano. <img src="" > </li>
->>>>>>> 89f4e2b203c4a7b1cab4f86bf390fa8b6007773a
+<li>Rebeca Poma. <img src="/images/rebe.jpg" alt="rebe" width="50" heigth="80" ></li>
+  
+<li>Raúl Muñóz. <img src="/images/raul.jpg" alt="raul" width="50" heigth="80"> </li> 
+
+<li>Angel Serrano. <img src="/images/angel.jpg" alt="angel" width="50" heigth="80" > </li>
+
+<li>Javier Serrano. <img src="/images/javi.jpg" alt="javier" width="50" heigth="80" > </li>
 </ul>
+
+
