@@ -6,6 +6,13 @@ En este repositorio, encontrarás una completa y organizada base de datos diseñ
 ---
 
 
+## Instalación:
+
+Para instalar el proyecto, debe clonar el repositorio con el siguiente enlace: https://github.com/rebecapoma6/APIWEB-CONEJILLO-DE-INDIAS
+
+---
+
+
 <h1 align= center> Stack: </h1>
 
 ● Visual Studio Community 2022. 
@@ -25,7 +32,7 @@ En este repositorio, encontrarás una completa y organizada base de datos diseñ
 <h1 align= center> CRÉDITOS: </h1>
 
 <ul>
-<li>Rebeca Poma.</li>
+<li>Rebeca Poma. <img src=""</li>
 <li>Raúl Muñóz.</li>
 <li>Angel Serrano.</li>
 <li>Javier Serrano.</li>
