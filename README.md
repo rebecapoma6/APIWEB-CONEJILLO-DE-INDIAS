@@ -26,7 +26,7 @@ En este repositorio, encontrarás una completa y organizada base de datos diseñ
 
 <ul>
 <li>Rebeca Poma.</li>
-<li>Raúl Muñóz.</li>
+<li>Raúl Muñóz.</li>   
 <li>Angel Serrano.</li>
 <li>Javier Serrano.</li>
 </ul>
