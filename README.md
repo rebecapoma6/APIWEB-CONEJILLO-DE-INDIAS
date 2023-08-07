@@ -10,35 +10,48 @@ En este repositorio, encontrarás una completa y organizada base de datos diseñ
 
 Para instalar el proyecto, debe clonar el repositorio con el siguiente enlace: https://github.com/rebecapoma6/APIWEB-CONEJILLO-DE-INDIAS
 
+<li>Abre el proyecto en Visual Studio Code.</li>
+<li>Configura la cadena de conexión de la base de datos en el archivo appsettings.json:</li>
+  <img src="https://i.postimg.cc/fL601VpZ/json-string.png" alt="" width="400px" />
+<li>Crea la base de datos ejecutando las migraciones:
+update-database.</li>
+</ol>
+
 ---
 
 
 <h1 align= center> Tecnologias: </h1>
 
+<p float="left">  
 
+<img src="https://cdn-icons-png.flaticon.com/128/6213/6213731.png" alt="Backend" width="40" heigth="40"/> 
 
-● BACKEND <img src="https://cdn-icons-png.flaticon.com/128/6213/6213731.png" alt="Backend" width="40" heigth="40"/> 
+<img src="https://cdn-icons-png.flaticon.com/128/6132/6132222.png" alt="C sharp" width="40" heigth="40"/> 
 
-● C# <img src="https://cdn-icons-png.flaticon.com/128/6132/6132222.png" alt="C sharp" width="40" heigth="40"/> 
-
-
+</p>
 
 ---
 
 
 <h1 align= center> Herramientas: </h1>
 
+<p float="left">  
 
+<img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" width="40" heigth="40"/> 
 
-● GITHUB  <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" width="40" heigth="40"/> 
+<img src="https://cdn-icons-png.flaticon.com/128/5968/5968389.png" alt="Visual Studio" width="40" heigth="40"/>
 
-● Visual Studio Community 2022. <img src="https://cdn-icons-png.flaticon.com/128/5968/5968389.png" alt="Visual Studio" width="40" heigth="40"/>
+<img src="https://cdn-icons-png.flaticon.com/128/2772/2772128.png" alt="SQL Server" width="40" heigth="40"/>
 
-● SQL Server Studio Management  <img src="https://cdn-icons-png.flaticon.com/128/2772/2772128.png" alt="SQL Server" width="40" heigth="40"/>
+<img src="https://i.postimg.cc/9fXJL2LX/descarga.png" alt="SQL Server" width="40" heigth="40"/> 
+
+<img src="https://i.postimg.cc/D009Hs5Z/NET-Core-Logo-svg.png" alt="SQL Server" width="40" heigth="40"/>
+</p>
 
 ---
 
 <h1 align= center> CRÉDITOS: </h1>
+
 
 <ul>
 <li>Rebeca Poma. <img src="/images/rebe.jpg" alt="rebe" width="100" heigth="80" ></li>
@@ -49,5 +62,3 @@ Para instalar el proyecto, debe clonar el repositorio con el siguiente enlace: h
 
 <li>Javier Serrano. <img src="/images/javi.jpg" alt="javier" width="100" heigth="80" > </li>
 </ul>
-
-
