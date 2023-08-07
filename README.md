@@ -17,9 +17,9 @@ Para instalar el proyecto, debe clonar el repositorio con el siguiente enlace: h
 
 
 
-● FRONTEND
+● BACKEND <img src="https://cdn-icons-png.flaticon.com/128/6213/6213731.png" alt="Backend" width="40" heigth="40"/> 
 
-● C#
+● C# <img src="https://cdn-icons-png.flaticon.com/128/6132/6132222.png" alt="C sharp" width="40" heigth="40"/> 
 
 
 
@@ -32,9 +32,9 @@ Para instalar el proyecto, debe clonar el repositorio con el siguiente enlace: h
 
 ● GITHUB  <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" width="40" heigth="40"/> 
 
-● Visual Studio Community 2022. 
+● Visual Studio Community 2022. <img src="https://cdn-icons-png.flaticon.com/128/5968/5968389.png" alt="Visual Studio" width="40" heigth="40"/>
 
-● SQL Server Studio Management
+● SQL Server Studio Management  <img src="https://cdn-icons-png.flaticon.com/128/2772/2772128.png" alt="SQL Server" width="40" heigth="40"/>
 
 ---
 
